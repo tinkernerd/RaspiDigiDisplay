@@ -1,0 +1,13 @@
+#Place this in '/etc/xdg/lxsession/LXDE-pi' named 'autostart' without file extension (basic file not .txt)
+
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreensaver -no-splash
+
+@unclutter -idle 0
+
+# Use the environment variable for the URL
+@chromium-browser --new-window --user-data-dir=/tmp/browser-2 --window-position="1920,0" --start-fullscreen --kiosk --autoplay-policy=no-user-gesture-required --incognito --noerrdialogs --disable-translate --disable-infobars "$PRESENTATION_URL"
+
+# Run the Python clicker script
+python3 /home/pi/Desktop/FinalPowerpointClicker.py &
